@@ -1,10 +1,15 @@
 import React from 'react';
 
-const InfoLine = () => {
+interface IProps {
+  page: string;
+}
+
+const InfoLine: React.FC<IProps> = (props) => {
+
   return (
       <div className="navi-line">
           <div className="page">
-            <span>Страница</span>
+            <span>{props.page}</span>
           </div>
           <div className="path">
               <span>проект/страница</span>
