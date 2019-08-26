@@ -1,3 +1,21 @@
+@import "./color.scss";
+@import "./block";
+@import "./header";
+
+
 html, body {
-  background-color: rgba(0, 0, 0, 0.01);
+  background-color: $color-dark;
+  font-family: "Segoe UI Semibold";
+  color: $color-lite;
+  margin:0;
+  padding:0;
+}
+
+a {
+  color: $color-lite;
+  text-decoration: none;
+}
+a:focus {
+  color: $color-main;
+
 }
