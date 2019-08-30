@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import Router from './service/router';
+import Router from './service/router/router';
 import './styles/index.scss';
 import SideMenu from './components/sidebar-menu';
 import Header from './components/header';
 import InfoLine from './components/info-line';
-import MessageWindow from "./components/message/mes-window";
 
 interface IState {
   currentPage: string;
@@ -49,7 +48,6 @@ class App extends Component<{}, IState> {
             </div>
           </div>
         </div>
-          <MessageWindow page={this.state.currentPage}/>
       </div>
     );
   }

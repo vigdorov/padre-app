@@ -1,36 +1,22 @@
-import React, {Component} from 'react';
+import React from 'react';
 import '../../../styles/message.scss'
+import { IMessage } from "../../../service/messageService";
+import { Message } from "../message";
 
-
-interface IState {
-    message: string;
-}
 interface IProps {
-    page: string;
+    messages: IMessage[]
 }
 
+export const MessageWindow: React.FC<IProps> = (props) => {
+    const { messages } = props;
 
-
-class MessageWindow extends Component<IProps,IState> {
-    constructor (props: IProps) {
-        super (props);
-
-        this.state = {
-        message: this.props.page
-        }
-    };
-
-
-    render () {
-
-        return (
-            <div className="message__window">
-                <div  id="mes-box" className="message__box">
-                    {this.state.message}
-                </div>
-            </div>
-        )
-    }
-
-}
-export default MessageWindow;
+    return (
+      <React.Fragment>
+          {
+              messages.map( (message: IMessage) => {
+                  return <Message message={message} />
+              })
+          }
+      </React.Fragment>
+    )
+};

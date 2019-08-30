@@ -2,13 +2,13 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import * as URL from './url';
 
-import { Dashboard } from '../page/dashboard';
-import { OrderList } from '../page/order-list';
-import { ChefPage } from '../page/chef-page';
-import { CustomerReviews } from '../page/customer-reviews';
-import { MenuLayout } from '../page/menu-layout';
-import { UploadMenu } from '../page/upload-menu';
-import { NotFound } from '../page/404';
+import { Dashboard } from '../../page/dashboard';
+import { OrderList } from '../../page/order-list';
+import { ChefPage } from '../../page/chef-page';
+import { CustomerReviews } from '../../page/customer-reviews';
+import { MenuLayout } from '../../page/menu-layout';
+import { UploadMenu } from '../../page/upload-menu';
+import { NotFound } from '../../page/404';
 
 export default (
   <Switch>

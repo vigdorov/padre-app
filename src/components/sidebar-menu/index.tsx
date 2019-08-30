@@ -1,5 +1,5 @@
-import React from 'react';
-import * as URL from "../../service/url";
+import React, { useState } from 'react';
+import * as URL from "../../service/router/url";
 import { Link } from 'react-router-dom';
 
 interface IProps {
@@ -14,17 +14,25 @@ const SideMenu: React.FC<IProps> = (props) => {
     let icon: any = document.getElementsByClassName('icon__img');
     let btn: any = document.getElementsByClassName("menu-btn");
 
-    const handleClick = (page: string) => {
+    const [ select, setSelect ] = useState(1);
+
+    const handleClick = (page: string, pageNumber: number) => {
       props.onChangePage(page);
-      props.showMessage(page);
+      setSelect(pageNumber);
     };
 
 
     arr.forEach((url, index) =>{
-        menuArr.push (
+      const divClass = [ 'menu-btn' ];
+
+      if (select === index) {
+        divClass.push('focus');
+      }
+
+      menuArr.push (
             <Link to={url.url} key={index} >
-            <div className="menu-btn"
-                 onClick={() => handleClick(url.title)}
+            <div className={ divClass.join(' ') }
+                 onClick={() => handleClick(url.title, index)}
                  onMouseOver = {() => {icon[index].style.display = "flex"}}
                  onMouseOut= {() => {icon[index].style.display = "none"}}>
                 <div className="icon">
