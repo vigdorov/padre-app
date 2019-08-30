@@ -18,7 +18,7 @@
   display: flex;
   flex-direction: column;
   width: 15%;
-  min-width: 150px;
+  min-width: 200px;
   height: 100%;
   margin-right: 10px;
   padding-top: 20px;
@@ -43,7 +43,7 @@
   border: none;
   margin-top: 5px;
 }
-.menu-btn:focus {
+.focus {
   background-color: $color-dark;
   border-left: 1px solid $color-main;
   color: $color-main

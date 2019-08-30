@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 interface IProps {
   onChangePage: (page: string) => void;
+  showMessage: (page: string) => void;
 }
 
 const SideMenu: React.FC<IProps> = (props) => {
@@ -11,10 +12,13 @@ const SideMenu: React.FC<IProps> = (props) => {
     const menuArr: any = [];
 
     let icon: any = document.getElementsByClassName('icon__img');
+    let btn: any = document.getElementsByClassName("menu-btn");
 
     const handleClick = (page: string) => {
       props.onChangePage(page);
+      props.showMessage(page);
     };
+
 
     arr.forEach((url, index) =>{
         menuArr.push (

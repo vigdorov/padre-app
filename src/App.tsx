@@ -4,17 +4,22 @@ import './styles/index.scss';
 import SideMenu from './components/sidebar-menu';
 import Header from './components/header';
 import InfoLine from './components/info-line';
+import MessageWindow from "./components/message/mes-window";
 
 interface IState {
   currentPage: string;
+  messageArr: any;
 }
+
+
 
 class App extends Component<{}, IState> {
   constructor (props: {}) {
     super(props);
 
     this.state = {
-      currentPage: ''
+      currentPage: window.location.pathname,
+      messageArr: []
     };
   }
 
@@ -23,14 +28,20 @@ class App extends Component<{}, IState> {
       currentPage: page
     });
   };
+  showMessage = (page: string): void => {
+     this.setState( {
+         messageArr: page
+     })
+
+  };
+
 
   render() {
     return (
       <div>
         <Header/>
-        <input type="text" />
         <div className="container">
-          <SideMenu onChangePage={this.handleChangePage}/>
+          <SideMenu onChangePage={this.handleChangePage} showMessage={this.showMessage}/>
           <div className="content">
             <InfoLine page={this.state.currentPage}/>
             <div className="page-content">
@@ -38,6 +49,7 @@ class App extends Component<{}, IState> {
             </div>
           </div>
         </div>
+          <MessageWindow page={this.state.currentPage}/>
       </div>
     );
   }
