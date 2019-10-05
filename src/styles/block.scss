@@ -37,7 +37,7 @@
   font-size: 15px;
   width: 90%;
   height: 40px;
-  align-items: left;
+  align-items: center;
   background-color: $color-dark-lite;
   color: $color-lite;
   border: none;
@@ -45,7 +45,7 @@
 }
 .focus {
   background-color: $color-dark;
-  border-left: 1px solid $color-main;
+  border-left: 3px solid $color-main;
   color: $color-main
 
 }

@@ -7,7 +7,9 @@ export interface IMessage {
   title: string;
   text: string;
   type: 'danger' | 'success' | 'info';
+  icon:'fas fa-check color-green' | 'fas fa-skull-crossbones color-orange'| 'fas fa-info-circle color-blue';
 }
+
 
 class MessageService {
   private static _init: MessageService = new MessageService();
@@ -27,13 +29,31 @@ class MessageService {
     }, 5000);
   }
 
+
   public success (title: string, text: string) {
     this.showMessage({
       title,
       text,
-      type: 'success'
+      type: 'success',
+      icon: 'fas fa-check color-green'
     });
   }
+    public danger (title: string, text: string) {
+        this.showMessage({
+            title,
+            text,
+            type: 'danger',
+            icon: 'fas fa-skull-crossbones color-orange'
+        });
+    }
+    public info (title: string, text: string) {
+        this.showMessage({
+            title,
+            text,
+            type: 'info',
+            icon: 'fas fa-info-circle color-blue'
+        });
+    }
 
   // TODO: реализовать методы для danger и info сообщений
   // TODO: сделать чтобы по клику сообщения исчезали, сделай стили как в шаблоне
@@ -41,7 +61,7 @@ class MessageService {
 
   private render () {
     ReactDOM.render(
-      <MessageWindow messages={this.messages} />,
+      <MessageWindow messages={this.messages} render={this.render} />,
       document.getElementById('message')
     );
   }

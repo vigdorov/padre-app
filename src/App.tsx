@@ -4,10 +4,10 @@ import './styles/index.scss';
 import SideMenu from './components/sidebar-menu';
 import Header from './components/header';
 import InfoLine from './components/info-line';
+import Users from "./service/users";
 
 interface IState {
   currentPage: string;
-  messageArr: any;
 }
 
 
@@ -17,8 +17,8 @@ class App extends Component<{}, IState> {
     super(props);
 
     this.state = {
-      currentPage: window.location.pathname,
-      messageArr: []
+      currentPage: window.location.pathname
+
     };
   }
 
@@ -27,20 +27,15 @@ class App extends Component<{}, IState> {
       currentPage: page
     });
   };
-  showMessage = (page: string): void => {
-     this.setState( {
-         messageArr: page
-     })
-
-  };
 
 
   render() {
+      console.log(this.props);
     return (
       <div>
         <Header/>
         <div className="container">
-          <SideMenu onChangePage={this.handleChangePage} showMessage={this.showMessage}/>
+          <SideMenu onChangePage={this.handleChangePage}/>
           <div className="content">
             <InfoLine page={this.state.currentPage}/>
             <div className="page-content">

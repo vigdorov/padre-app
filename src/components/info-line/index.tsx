@@ -12,7 +12,6 @@ const InfoLine: React.FC<IProps> = (props) => {
             <span>{props.page}</span>
           </div>
           <div className="path">
-              <span>home/{props.page}</span>
           </div>
       </div>
   )

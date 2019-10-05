@@ -3,14 +3,39 @@ import { IMessage } from "../../../service/messageService";
 
 interface IProps {
   message: IMessage;
+  index: number;
+  handleClose: any;
 }
 
+const getDate: any = new Date();
+let options = {
+    era: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    weekday: 'long',
+    timezone: 'UTC',
+    hour: 'numeric',
+    minute: 'numeric',
+    second: 'numeric'
+};
+
+
 export const Message: React.FC<IProps> = (props) => {
-  const { title, text, type } = props.message;
+  const { title, text, type, icon} = props.message;
+const closeMessage = props.handleClose;
+let i = props.index;
   return (
       <div className={`message__body message__body-${type}`}>
-        <h4>{title}</h4>
-        <p>{text}</p>
+          <span className="message__icon">
+              <i className={icon}/>
+          </span>
+          <div className="message__text">
+              <p><span className="message__text message__text-bold">{title}</span>: "{text}" <br/> <span className="message__text message__text-date">{getDate.toLocaleString("RU", options.year)}</span> </p>
+          </div>
+          <button  className="message__close" onClick={() => closeMessage(i)}> &#10006; </button>
       </div>
   )
 };
+
+
