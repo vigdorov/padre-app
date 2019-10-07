@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import * as URL from "../../service/router/url";
 import { Link } from 'react-router-dom';
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 interface IProps {
   onChangePage: (page: string) => void;
@@ -23,19 +24,21 @@ const SideMenu: React.FC<IProps> = (props) => {
 
     arr.forEach((url, index) =>{
       const divClass = [ 'menu-btn' ];
+      const iconClass = ['icon__img'];
 
       if (select === index) {
         divClass.push('focus');
+        iconClass.push('hover-icon');
       }
 
       menuArr.push (
             <Link to={url.url} key={index} >
             <div className={ divClass.join(' ') }
                  onClick={() => handleClick(url.title, index)}
-                 onMouseOver = {() => {icon[index].style.display = "flex"}}
-                 onMouseOut= {() => {icon[index].style.display = "none"}}>
+                 onMouseOver = {() => {icon[index].style.color = "#f75757"}}
+                 onMouseOut= {() => {icon[index].style.color = "white"}}>
                 <div className="icon">
-                    <img className="icon__img" src={url.image} />
+                   <FontAwesomeIcon className={iconClass.join(' ')} icon={url.image}/>
                 </div>
 
                 {url.title}

@@ -4,7 +4,9 @@ import './styles/index.scss';
 import SideMenu from './components/sidebar-menu';
 import Header from './components/header';
 import InfoLine from './components/info-line';
-import Users from "./service/users";
+import {connect, Provider} from "react-redux";
+import { addChef } from './service/store/actions';
+
 
 interface IState {
   currentPage: string;
@@ -30,7 +32,7 @@ class App extends Component<{}, IState> {
 
 
   render() {
-      console.log(this.props);
+      console.log('props in App', this.props);
     return (
       <div>
         <Header/>
@@ -46,9 +48,21 @@ class App extends Component<{}, IState> {
       </div>
     );
   }
+}
+
+const mapStateToProps = (store: any) => {
+  return {
+      chef: store.chef,
+  }
+};
+const mapDispatchToProps = (dispatch: any) => {
+  return {
+      addChef: (payload: any) => dispatch (addChef(payload)),
+  }
 };
 
-export default App;
+
+export default connect(mapStateToProps, mapDispatchToProps) (App);
 
 
 /*

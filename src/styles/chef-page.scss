@@ -1,0 +1,12 @@
+@import './color';
+
+
+.chef_page{
+  display: flex;
+  flex-wrap: wrap;
+  &__card{
+    width:250px;
+    height: 180px;
+    background-color: $color-dark-lite;
+  }
+}

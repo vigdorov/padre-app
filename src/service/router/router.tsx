@@ -4,7 +4,7 @@ import * as URL from './url';
 
 import { Dashboard } from '../../page/dashboard';
 import { OrderList } from '../../page/order-list';
-import { ChefPage } from '../../page/chef-page';
+import ChefPage from '../../page/chef-page';
 import { CustomerReviews } from '../../page/customer-reviews';
 import { MenuLayout } from '../../page/menu-layout';
 import { UploadMenu } from '../../page/upload-menu';

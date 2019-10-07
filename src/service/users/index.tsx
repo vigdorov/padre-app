@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-interface IState {
+export interface IChef {
     fullName: string;
     avatar: string;
     specialDish?: string;
@@ -20,7 +20,7 @@ interface IProps {
 }
 
 
-class Users extends Component<IProps, IState > {
+class Users extends Component<IProps, IChef > {
     constructor(props: IProps){
         super(props);
 

@@ -1,22 +1,50 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { reducer } from "../../service/store/reducer";
 import {addChef} from "../../service/store/actions";
 
+interface IProps {
+ chef: [];
+ food: [];
+ addChef: any;
+}
 
-export const ChefPage = (props: any) => {
-    const {chef, food, addChef} = props;
-    console.log(props);
+
+class ChefPage extends React.Component<IProps, {}> {
+    constructor (props: IProps) {
+        super (props);
+        this.state = {
+        }
+    }
+
+     render () {
+    const {chef, food, addChef}= this.props;
   return (
-    <div>
-
+    <div className="chef_page">
+        {chef.map((item: any, index:number) => {
+            return (
+                <div className="chef_page__card" key={index}>
+                    <div className="chef_page__card-name">
+                        {item.fullName}
+                    </div>
+                    <div className="chef_page__card-info">
+                        <div>
+                            {item.age}
+                        </div>
+                        <div>
+                            {item.phone}
+                        </div>
+                    </div>
+                </div>
+            )
+        })}
     </div>
   );
-};
+}
+}
 const mapStateToProps = (store: any) => {
-    console.log(store);
     return {
         chef: store.chef,
+        food: store.food,
     };
 };
 
