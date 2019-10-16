@@ -6,6 +6,7 @@ export const URL_CHEF_PAGE = '/chef-page';
 export const URL_CUSTOMER_REVIEWS = '/customer-reviews';
 export const URL_MENU_LAYOUT = '/menu-layout';
 export const URL_UPLOAD_MENU = '/upload-menu';
+export const URL_CHEF_SINGLE_PAGE = '/chef-single-page';
 
 
 export const ChefList = faBars;

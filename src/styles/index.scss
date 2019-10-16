@@ -3,6 +3,9 @@
 @import "./header";
 @import "./message";
 @import './chef-page.scss';
+@import './button.scss';
+@import './modal.scss';
+@import './view-options.scss';
 
 html, body {
   background-color: $color-dark;
@@ -11,7 +14,9 @@ html, body {
   margin:0;
   padding:0;
 }
-
+input, select, textarea {
+  font-family: "Segoe UI Semibold";
+}
 a {
   color: $color-lite;
   text-decoration: none;

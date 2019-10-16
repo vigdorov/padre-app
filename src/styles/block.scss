@@ -85,3 +85,8 @@
 .hover-icon{
   color: $color-main !important;
 }
+.path{
+  &__icon {
+    margin: 0 10px;
+  }
+}

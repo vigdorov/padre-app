@@ -1,13 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
 import { MessageWindow } from "../../components/message/mes-window";
+import {faCheck, faSkullCrossbones, faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 
 export interface IMessage {
   title: string;
   text: string;
   type: 'danger' | 'success' | 'info';
-  icon:'fas fa-check color-green' | 'fas fa-skull-crossbones color-orange'| 'fas fa-info-circle color-blue';
+  classType:'color-green' | 'color-orange'| 'color-blue';
+  icon: any;
 }
 
 
@@ -35,7 +36,8 @@ class MessageService {
       title,
       text,
       type: 'success',
-      icon: 'fas fa-check color-green'
+      classType: 'color-green',
+        icon: faCheck
     });
   }
     public danger (title: string, text: string) {
@@ -43,7 +45,8 @@ class MessageService {
             title,
             text,
             type: 'danger',
-            icon: 'fas fa-skull-crossbones color-orange'
+            classType: 'color-orange',
+            icon: faSkullCrossbones
         });
     }
     public info (title: string, text: string) {
@@ -51,13 +54,11 @@ class MessageService {
             title,
             text,
             type: 'info',
-            icon: 'fas fa-info-circle color-blue'
+            classType: 'color-blue',
+            icon: faInfoCircle
         });
     }
 
-  // TODO: реализовать методы для danger и info сообщений
-  // TODO: сделать чтобы по клику сообщения исчезали, сделай стили как в шаблоне
-  // TODO: сделай все появления и исчезновения плавными
 
   private render () {
     ReactDOM.render(

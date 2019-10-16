@@ -1,0 +1,40 @@
+@import './color';
+
+.btn{
+cursor: pointer;
+  &__add {
+    width: 120px;
+    height: 30px;
+    font-size: 16px;
+    border-radius: 30px;
+    border: none;
+    color: white;
+    background-color: $color-main;
+    margin: 5px;
+  }
+  &__success {
+    width: 120px;
+    height: 30px;
+    font-size: 16px;
+    border-radius: 30px;
+    border: none;
+    color: white;
+    background-color: $color-main;
+    margin: 5px;
+  }
+  &__cancel {
+    width: 120px;
+    height: 30px;
+    font-size: 16px;
+    border-radius: 30px;
+    border: none;
+    color: white;
+    background-color: $color-gray;
+    margin: 5px;
+  }
+  &__empty {
+    border: none;
+    background: none;
+    color: white;
+  }
+}

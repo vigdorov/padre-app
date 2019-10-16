@@ -4,9 +4,52 @@
 .chef_page{
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
   &__card{
-    width:250px;
-    height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width:200px;
+    height: 250px;
     background-color: $color-dark-lite;
+    margin: 5px;
+    position: relative;
+    &-info {
+      margin: 5px;
+      display: flex;
+      flex-direction: row;
+    }
+    &-menu {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+    }
+    &-h3 {
+      font-size: 16px;
+      margin: 5px;
+    }
+    &-p {
+      font-size: 14px;
+      text-align: center;
+      margin: 5px;
+    }
+    &-avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+    }
+    &-email {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+    }
   }
+}
+.social_chef{
+display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100px;
+
 }

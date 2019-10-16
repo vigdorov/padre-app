@@ -5,3 +5,7 @@ export const ADD_CHEF_FOOD = 'ADD_CHEF_FOOD';
 export const ADD_FOOD = 'ADD_FOOD';
 export const DELETE_FOOD = 'DELETE_FOOD';
 export const EDIT_FOOD = 'EDIT_FOOD';
+export const CHECK_CHEF = 'CHECK_CHEF';
+export const HIDE_MODAL = 'HIDE_MODAL';
+export const SHOW_MODAL = 'SHOW_MODAL';
+export const OPTION_STYLE = 'OPTION_STYLE';

@@ -1,0 +1,122 @@
+@import './color';
+
+.modal {
+ &__window {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(8, 1, 1, 0.7);
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   z-index: 20;
+ }
+  &__container {
+    display: flex;
+    flex-direction: column;
+  }
+  &__delete {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0;
+  }
+  &__body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 10px;
+    background-color: $color-dark-lite;
+  }
+  &__header {
+    width: 100%;
+    height: 40px;
+    background-color: $color-dark-lite;
+    margin-bottom: 10px;
+  }
+  &__title{
+    font-size: 20px;
+    color: $color-main;
+    margin: 5px;
+  }
+  &__footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px 20px;
+  }
+  &__add {
+    &-content {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      padding: 20px;
+    }
+   &-img{
+     width: 100px;
+     height: 100px;
+     border-radius: 50%;
+   }
+    &-avatar {
+      display: flex;
+      flex-direction: column;
+
+      width: 30%;
+      padding: 10px;
+    }
+    &-form {
+      width: 70%;
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+    }
+    &-text {
+      margin: 0;
+      width: 100px;
+    }
+
+    &-ava-select {
+      color: $color-main;
+    }
+  }
+}
+.form {
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  &__input {
+    width: 200px;
+    height: 30px;
+    border: 1px solid white;
+    background-color: $color-dark-lite;
+    color: white;
+    padding: 0 10px;
+  }
+  &__select {
+    width: 220px;
+    height: 30px;
+    border: 1px solid white;
+    background-color: $color-dark-lite;
+    color: white;
+    padding: 0 10px;
+  }
+  &__textarea {
+    width: 200px;
+    height: 50px;
+    border: 1px solid white;
+    background-color: $color-dark-lite;
+    color: white;
+    padding: 0 10px;
+  }
+  &__text {
+    width: 150px;
+    height: 20px;
+    margin: 10px 0;
+  }
+}

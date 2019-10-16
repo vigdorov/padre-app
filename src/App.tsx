@@ -5,21 +5,25 @@ import SideMenu from './components/sidebar-menu';
 import Header from './components/header';
 import InfoLine from './components/info-line';
 import {connect, Provider} from "react-redux";
-import { addChef } from './service/store/actions';
+import {addChef, hideModal} from './service/store/actions';
+import AddModal from "./components/modal/add-modal";
 
 
 interface IState {
   currentPage: string;
 }
+interface IProps {
+  hideModal: any;
+  modalVisible: boolean;
+}
 
 
-
-class App extends Component<{}, IState> {
-  constructor (props: {}) {
+class App extends Component<IProps, IState> {
+  constructor (props: IProps) {
     super(props);
 
     this.state = {
-      currentPage: window.location.pathname
+      currentPage: window.location.pathname,
 
     };
   }
@@ -32,11 +36,12 @@ class App extends Component<{}, IState> {
 
 
   render() {
-      console.log('props in App', this.props);
+
     return (
       <div>
         <Header/>
         <div className="container">
+          <AddModal modalVisible={this.props.modalVisible} hideModal={this.props.hideModal}/>
           <SideMenu onChangePage={this.handleChangePage}/>
           <div className="content">
             <InfoLine page={this.state.currentPage}/>
@@ -52,12 +57,14 @@ class App extends Component<{}, IState> {
 
 const mapStateToProps = (store: any) => {
   return {
-      chef: store.chef,
+   chef: store.chef,
+   modalVisible: store.modalVisible
   }
 };
 const mapDispatchToProps = (dispatch: any) => {
   return {
       addChef: (payload: any) => dispatch (addChef(payload)),
+    hideModal: () => dispatch (hideModal()),
   }
 };
 

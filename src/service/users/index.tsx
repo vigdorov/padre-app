@@ -1,20 +1,23 @@
 import React, {Component} from 'react';
 
 export interface IChef {
-    fullName: string;
-    avatar: string;
-    specialDish?: string;
-    designation?: string;
-    age?: number;
-    experience?: string;
-    phone?: number;
-    address?: string;
-   aboutMe?: string;
-    email?: string;
-    facebookURL?: string;
-    twitterURL?: string;
-    linkedInURL?: string;
-}
+
+        fullName: string;
+        avatar: string;
+        specialDish?: string;
+        designation?: string;
+        age?: number;
+        experience?: string;
+        phone?: number;
+        address?: string;
+        aboutMe?: string;
+        email?: string;
+        facebookURL?: string;
+        twitterURL?: string;
+        linkedInURL?: string;
+    }
+
+
 interface IProps {
     name: string;
 }

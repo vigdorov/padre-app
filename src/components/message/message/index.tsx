@@ -1,5 +1,6 @@
 import React from 'react';
 import { IMessage } from "../../../service/messageService";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 interface IProps {
   message: IMessage;
@@ -22,13 +23,13 @@ let options = {
 
 
 export const Message: React.FC<IProps> = (props) => {
-  const { title, text, type, icon} = props.message;
+  const { title, text, type, icon, classType} = props.message;
 const closeMessage = props.handleClose;
 let i = props.index;
   return (
       <div className={`message__body message__body-${type}`}>
           <span className="message__icon">
-              <i className={icon}/>
+              <FontAwesomeIcon icon={icon} className={classType}/>
           </span>
           <div className="message__text">
               <p><span className="message__text message__text-bold">{title}</span>: "{text}" <br/> <span className="message__text message__text-date">{getDate.toLocaleString("RU", options.year)}</span> </p>
