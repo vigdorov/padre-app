@@ -1,0 +1,101 @@
+@import './color';
+
+.order{
+  &__statistic {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    &__item {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      padding: 20px 10px;
+      background-color: $color-dark-lite;
+      width: 31%;
+    }
+  }
+  &__item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin: 10px 0;
+    height: 80px;
+    padding: 0 20px;
+    background-color: $color-dark-lite;
+  }
+  &__icon {
+    font-size: 30px;
+    width: 10%;
+  }
+  &__id {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 10%;
+  }
+  &__pay {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 20%;
+  }
+  &__total {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 30%;
+    span{
+      color: $color-main;
+      margin: 0 10px;
+    }
+  }
+  &__delivery {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 10%;
+    min-width: 100px;
+    height: 30px;
+    border-radius: 20px;
+  }
+  span{
+    color: $color-main;
+  }
+}
+.blue {
+  background-color: $color-blue;
+}
+.green {
+  background-color: $color-green;
+  color: black;
+}
+.orange {
+  background-color: $color-orange;
+  color: black;
+}
+.blue-text {
+  color: $color-blue-lite;
+}
+.green-text {
+ color: $color-green;
+}
+.orange-text {
+  color: $color-orange;
+}
+.statistic__icon {
+  font-size: xx-large;
+  margin: 0 10px;
+}
+.statistic__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  h3{
+    margin: 5px 0;
+  }
+}

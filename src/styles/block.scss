@@ -22,8 +22,8 @@
   min-width: 200px;
   height: 100%;
   margin-right: 10px;
-  padding-top: 20px;
-
+  padding: 20px 0;
+z-index: 299;
   span {
      margin-left: 30px;
      color: $color-main;
@@ -31,7 +31,7 @@
    }
 }
 .menu-btn {
-  margin-left: 10px;
+
   display: flex;
   flex-direction: row;
   font-family: "Segoe UI Semibold";
@@ -90,3 +90,93 @@
     margin: 0 10px;
   }
 }
+.receipt {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background-color: $color-dark-lite;
+  z-index: 300;
+  &__checkbox {
+    width: 100px;
+    height: 120px;
+    border: none;
+    display: flex;
+    position: absolute;
+    font-size: 100px;
+    color: $color-green;
+    background-color: $color-dark-lite;
+    top: 20px;
+  }
+  &__price {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 20px;
+    background-color: $color-main;
+    width: 100px;
+    height: 30px;
+    border-radius: 20px;
+  }
+  &__length {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 20px;
+    background-color: $color-main;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+  }
+  &__btn {
+    margin: 0 30px;
+  }
+  &__items {
+
+    align-self: center;
+  }
+}
+.hide {
+  display: none;
+}
+.relative {
+  position: relative;
+}
+.checkbox {
+  display: none;
+}
+.checkbox + label {
+  width: 120px;
+  height: 100px;
+  position: absolute;
+  cursor: pointer;
+}
+.checkbox:checked + label {
+  width: 120px;
+  height: 100px;
+  background-image: url(../images/other/check4.png);
+  background-size: cover;
+}
+
+@media screen and (max-width: 540px) {
+  .menu__text{
+    display: none;
+  }
+  .sidebar-menu {
+    min-width: 70px;
+  }
+  .single__second-info1 {
+    background-color: $color-dark-lite;
+    margin: 10px 0 0 0;
+    width: 100%;
+    padding: 20px;
+  }
+  .receipt__items {
+    display: none;
+  }
+}
+

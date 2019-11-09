@@ -4,7 +4,7 @@ import chefImg from '../../images/chef-img/chef4.png';
 import FormItem from "../form-item/form-item-input.component";
 import FormItemSelect from "../form-item/form-item-select.component";
 import FormItemTextArea from "../form-item/form-item-textarea.component";
-import {getFood} from "../../service/store/api.comand";
+import {getChef, getFood} from "../../service/store/api.comand";
 
 interface IProps{
     modalVisible: any;
@@ -16,8 +16,10 @@ interface IProps{
 interface IState {
     options: any;
     food: any;
+    chef: any;
+    index: any;
 }
-class AddModal extends React.Component <IProps, IState> {
+class EditModal extends React.Component <IProps, IState> {
     constructor (props: IProps) {
         super (props);
         this.state = {
@@ -44,6 +46,8 @@ class AddModal extends React.Component <IProps, IState> {
                 }
             ],
             food: [],
+            chef: [],
+            index: null,
         }
     }
 
@@ -51,6 +55,10 @@ class AddModal extends React.Component <IProps, IState> {
         getFood().then((data: any) => {
             this.setState({food: data});
             console.log('food in add modal', this.state.food);
+        });
+        getChef().then((data: any) => {
+            this.setState({chef: data});
+            console.log('chef in add modal', this.state.chef);
         })
     }
 
@@ -89,20 +97,21 @@ class AddModal extends React.Component <IProps, IState> {
                         </p>
                     </div>
                     <div className="modal__add-form">
-                       <FormItem type={'text'} title={'Имя:'} placeholder={'Введите имя'} changeValue={(event: any) => this.props.changeInput(event)} name={'name'} special={''}/>
+                       <FormItem type={'text'} title={'Имя:'} placeholder={'Введите имя'} changeValue={(event: any) => this.props.changeInput(event)} name={'name'} special={' '}/>
                        <FormItemSelect options={this.state.food} title={'Блюдо шефа'} placeholder={'Выберите блюдо'} changeValue={(event: any) => this.props.changeInput(event)} name={'special'}/>
                         <FormItemSelect options={this.state.options} title={'Ранг'} placeholder={'На сколько шеф крут'} changeValue={(event: any) => this.props.changeInput(event)} name={'rang'}/>
-                        <FormItem type={'tel'} title={'Возраст:'} placeholder={''} changeValue={(event: any) => this.props.changeInput(event)} name={'age'} special={''}/>
+                        <FormItem type={'tel'} title={'Возраст:'} placeholder={''} changeValue={(event: any) => this.props.changeInput(event)} name={'age'} special={' '}/>
                         <FormItemTextArea title={'Предыдущий опыт'} placeholder={'Опишите где вы работали до этого'} changeValue={(event: any) => this.props.changeInput(event)} name={'experience'}/>
-                        <FormItem type={'tel'} title={'Телефон:'} placeholder={'Введите номер'} changeValue={(event: any) => this.props.changeInput(event)} name={'phone'} special={''}/>
+                        <FormItem type={'tel'} title={'Телефон:'} placeholder={'Введите номер'} changeValue={(event: any) => this.props.changeInput(event)} name={'phone'} special={' '}/>
                         <FormItemTextArea title={'Адрес:'} placeholder={'Введите адрес'} changeValue={(event: any) => this.props.changeInput(event)} name={'address'}/>
                         <FormItemTextArea title={'Обо мне:'} placeholder={'Опишите свои интересы, хобби, цели'} changeValue={(event: any) => this.props.changeInput(event)} name={'aboutMe'}/>
 
-                        <FormItem type={'mail'} title={'Почта:'} placeholder={'Введите адрес почты'} changeValue={(event: any) => this.props.changeInput(event)} name={'email'} special={''}/>
-                        <FormItem type={'mail'} title={'Facebook:'} placeholder={'Вставьте ссылку'} changeValue={(event: any) => this.props.changeInput(event)} name={'facebookURL'} special={''}/>
-                        <FormItem type={'mail'} title={'Twitter:'} placeholder={'Вставьте ссылку'} changeValue={(event: any) => this.props.changeInput(event)} name={'twitterURL'} special={''}/>
-                        <FormItem type={'mail'} title={'ВК:'} placeholder={'Вставьте ссылку'} changeValue={(event: any) => this.props.changeInput(event)} name={'vk'} special={''}/>
+                        <FormItem type={'mail'} title={'Почта:'} placeholder={'Введите адрес почты'} changeValue={(event: any) => this.props.changeInput(event)} name={'email'} special={' '}/>
+                        <FormItem type={'mail'} title={'Facebook:'} placeholder={'Вставьте ссылку'} changeValue={(event: any) => this.props.changeInput(event)} name={'facebookURL'} special={' '}/>
+                        <FormItem type={'mail'} title={'Twitter:'} placeholder={'Вставьте ссылку'} changeValue={(event: any) => this.props.changeInput(event)} name={'twitterURL'} special={' '}/>
+                        <FormItem type={'mail'} title={'ВК:'} placeholder={'Вставьте ссылку'} changeValue={(event: any) => this.props.changeInput(event)} name={'vk'} special={' '}/>
                     </div>
+
                 </div>
             </Modal>
 
@@ -110,4 +119,4 @@ class AddModal extends React.Component <IProps, IState> {
     }
 }
 
-export default AddModal;
+export default EditModal;

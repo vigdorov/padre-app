@@ -17,6 +17,7 @@
   &__container {
     display: flex;
     flex-direction: column;
+
   }
   &__delete {
     display: flex;
@@ -36,11 +37,25 @@
     height: 40px;
     background-color: $color-dark-lite;
     margin-bottom: 10px;
+    display: flex;
+    position: relative;
   }
   &__title{
     font-size: 20px;
     color: $color-main;
     margin: 5px;
+  }
+  &__avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 10px;
+  }
+  &__close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
   }
   &__footer {
     display: flex;

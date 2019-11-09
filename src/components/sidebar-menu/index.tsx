@@ -14,12 +14,26 @@ const SideMenu: React.FC<IProps> = (props) => {
     let icon: any = document.getElementsByClassName('icon__img');
 
 
-    const [ select, setSelect ] = useState(1);
+    const [ select, setSelect ] = useState(0);
 
     const handleClick = (page: string, pageNumber: number) => {
       props.onChangePage(page);
       setSelect(pageNumber);
     };
+    const path: any = window.location.pathname;
+    if (path != '/') {
+        let newArr: any = [];
+        arr.forEach((item: any, index: number) => {
+            newArr.push(item.url);
+        });
+        let index = newArr.indexOf(path);
+
+        if (select != index && index != -1) {
+            let pageName = arr[index].title;
+            setSelect(index);
+            props.onChangePage(pageName);
+        }
+    }
 
 
     arr.forEach((url, index) =>{
@@ -40,8 +54,10 @@ const SideMenu: React.FC<IProps> = (props) => {
                 <div className="icon">
                    <FontAwesomeIcon className={iconClass.join(' ')} icon={url.image}/>
                 </div>
+                <div className="menu__text">
+                    {url.title}
+                </div>
 
-                {url.title}
             </div>
              </Link>
         )
@@ -52,7 +68,6 @@ const SideMenu: React.FC<IProps> = (props) => {
   return (
    <div className="sidebar-menu">
        <div className="main-list">
-           <span>MAIN</span> <br/>
            {menuArr}
        </div>
        <div className="login-list">

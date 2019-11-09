@@ -5,8 +5,8 @@ import SideMenu from './components/sidebar-menu';
 import Header from './components/header';
 import InfoLine from './components/info-line';
 import {connect, Provider} from "react-redux";
-import {addChef, hideModal} from './service/store/actions';
-import AddModal from "./components/modal/add-modal";
+import {addChef, checkOrders, hideModal, checkBasket} from './service/store/actions';
+import {getBasket, getOrders} from "./service/store/api.comand";
 
 
 interface IState {
@@ -14,7 +14,9 @@ interface IState {
 }
 interface IProps {
   hideModal: any;
-  modalVisible: boolean;
+  modalVisible: any;
+  basket: any;
+    checkBasket: any;
 }
 
 
@@ -28,7 +30,14 @@ class App extends Component<IProps, IState> {
     };
   }
 
-  handleChangePage = (page: string): void => {
+    componentDidMount() {
+        getBasket().then((list: any) => {
+            this.props.checkBasket(list);
+        });
+    }
+
+
+    handleChangePage = (page: string): void => {
     this.setState({
       currentPage: page
     });
@@ -39,9 +48,8 @@ class App extends Component<IProps, IState> {
 
     return (
       <div>
-        <Header/>
+        <Header basket={this.props.basket} changePage={this.handleChangePage}/>
         <div className="container">
-          <AddModal modalVisible={this.props.modalVisible} hideModal={this.props.hideModal}/>
           <SideMenu onChangePage={this.handleChangePage}/>
           <div className="content">
             <InfoLine page={this.state.currentPage}/>
@@ -58,6 +66,7 @@ class App extends Component<IProps, IState> {
 const mapStateToProps = (store: any) => {
   return {
    chef: store.chef,
+   basket: store.basket,
    modalVisible: store.modalVisible
   }
 };
@@ -65,6 +74,7 @@ const mapDispatchToProps = (dispatch: any) => {
   return {
       addChef: (payload: any) => dispatch (addChef(payload)),
     hideModal: () => dispatch (hideModal()),
+      checkBasket: (payload: any) => dispatch (checkBasket(payload)),
   }
 };
 

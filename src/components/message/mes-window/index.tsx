@@ -21,7 +21,7 @@ export const MessageWindow: React.FC<IProps> = (props) => {
       <React.Fragment>
           {
             messages.map( (message: IMessage, index) => {
-                  return <Message message={message} index={index} handleClose={handleClose}/>
+                  return <Message message={message} index={index} handleClose={handleClose} key={Math.random()}/>
               })
           }
       </React.Fragment>

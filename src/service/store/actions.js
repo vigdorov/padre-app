@@ -6,6 +6,24 @@ export const checkChef = (payload) => {
       payload: payload
   }
 };
+export const checkFood = (payload) => {
+    return {
+        type: T.CHECK_FOOD,
+        payload: payload
+    }
+};
+export const checkOrders = (payload) => {
+    return {
+        type: T.CHECK_ORDERS,
+        payload: payload
+    }
+};
+export const checkBasket = (payload) => {
+    return {
+        type: T.CHECK_BASKET,
+        payload: payload
+    }
+};
 export const changeStyle = (payload) => {
     return {
         type: T.OPTION_STYLE,
@@ -19,9 +37,10 @@ export const addChef = (payload) => {
         payload: payload,
     };
 };
-export const showModal = () => {
+export const showModal = (payload) => {
     return {
         type: T.SHOW_MODAL,
+        payload: payload,
     };
 };
 export const hideModal = () => {
@@ -43,11 +62,27 @@ export const editChef = (payload) => {
         payload: payload,
     };
 };
-
-export const addChefFood = (payload) => {
+export const editIndex = (payload) => {
     return {
-        type: T.ADD_CHEF_FOOD,
+        type: T.EDIT_INDEX,
         payload: payload,
+    };
+};
+export const addOrder = (payload) => {
+    return {
+        type: T.ADD_ORDER,
+        payload: payload,
+    };
+};
+export const addBasket = (payload) => {
+    return {
+        type: T.ADD_BASKET,
+        payload: payload,
+    };
+};
+export const clearBasket = () => {
+    return {
+        type: T.CLEAR_BASKET
     };
 };
 

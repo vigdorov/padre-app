@@ -6,6 +6,7 @@ interface IProps {
     placeholder: string;
     changeValue: any;
     name: string;
+    special: any;
 }
 
 const FormItem = (props: IProps) => {
@@ -19,7 +20,7 @@ return (
             type={props.type}
             placeholder={props.placeholder}
             onChange={props.changeValue}
-            className="form__input"
+            className= {`form__input ${props.special}`}
         />
     </div>
 )

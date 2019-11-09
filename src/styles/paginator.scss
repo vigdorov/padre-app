@@ -1,0 +1,21 @@
+@import './color';
+
+
+.paginator {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  &__container {
+    display: flex;
+    flex-direction: row;
+    background-color: $color-dark-lite;
+    justify-content: center;
+    padding: 5px 10px;
+    width: 100px;
+  }
+  &__items {
+    cursor: pointer;
+    margin: 0 5px;
+  }
+}

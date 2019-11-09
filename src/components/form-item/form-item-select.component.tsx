@@ -9,6 +9,7 @@ interface IProps {
 }
 
 const FormItemSelect = (props: IProps) => {
+    console.log('props.food', props.options);
 return (
     <div className="form__item">
         <p className="form__text">
@@ -22,7 +23,7 @@ return (
         >
             {props.options.map((item: any, index: number) => {
                 return (
-                    <option value={item.name}>{item.value}</option>
+                    <option value={item.name} key={index}>{item.name}</option>
                 )
             })}
         </select>

@@ -1,0 +1,133 @@
+@import './color';
+
+.basket {
+  &__total {
+    font-size: larger;
+    margin: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    span{
+      color: $color-main;
+    }
+  }
+  &__address {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  &__checkbox {
+display: none;
+  }
+  &__checkbox + label{
+    font-size: larger;
+    margin: 10px;
+    cursor: pointer;
+  }
+
+  &__footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: larger;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: $color-dark-lite;
+    span {
+      margin-right: 30px;
+    }
+  }
+&__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+  &__box{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__content{
+    &__item {
+      width: 100%;
+
+      h3 {
+        text-align: center;
+      font-size: x-large;
+    }
+    }
+    &__list {
+      display: flex;
+      flex-direction: column;
+      label {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+    &__order {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      font-size: large;
+      width: 100%;
+      margin: 5px 0;
+      img{
+        width: 80px;
+        height: 80px;
+        border-radius: 50%
+      }
+      &-photo {
+        width:30%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      &-name {
+        width:40%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      &-count {
+        width:30%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $color-main;
+      }
+    }
+  }
+  &__number {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 30%;
+    background: rgb(62,62,222);
+    background: linear-gradient(180deg, rgba(62,62,222,0) 43%, rgba(48,95,229,1) 43%, rgba(14,179,248,1) 48%, rgba(0,212,255,0) 48%);
+    &-btn {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background-color: $color-blue-lite;
+      border: none;
+      font-size: larger;
+    }
+  }
+}
+.select {
+  background-color: $color-main;
+}
+.block {
+  background-color: $color-lite;
+}
+.max-width {
+  width: 100%;
+}

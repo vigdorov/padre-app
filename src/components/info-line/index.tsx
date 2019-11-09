@@ -15,7 +15,6 @@ const InfoLine: React.FC<IProps> = (props) => {
     const handleChangeStyle =(option: string): void => {
         props.changeStyle(option);
     };
-console.log( 'стили', props.optionStyle);
   return (
       <div className="navi-line">
           <div className="page">
@@ -23,10 +22,10 @@ console.log( 'стили', props.optionStyle);
           </div>
           <div className="path">
               <button onClick={() => props.changeStyle('page-view__list')} className="btn__empty">
-                  <FontAwesomeIcon className="path__icon" icon={faListAlt} />
+                  <FontAwesomeIcon className="path__icon" icon={faStream} />
               </button>
               <button onClick={() => props.changeStyle('page-view__block')} className="btn__empty">
-                  <FontAwesomeIcon className="path__icon" icon={faStream}  />
+                  <FontAwesomeIcon className="path__icon" icon={ faListAlt}  />
               </button>
               <button onClick={() => props.changeStyle('page-view__open')} className="btn__empty">
                   <FontAwesomeIcon className="path__icon" icon={faThList}  />

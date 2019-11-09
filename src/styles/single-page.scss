@@ -1,0 +1,76 @@
+@import './color';
+
+.single{
+  display: flex;
+  flex-direction: column;
+
+  &__main{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 20px;
+    background-color: $color-dark-lite;
+    span {
+      margin: 5px 5px;
+    }
+    &-name {
+      font-size: 20px;
+      color: $color-main;
+    }
+    &-description {
+      margin: 5px;
+    }
+    &-avatar {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 200px;
+    }
+    &-info {
+      display: flex;
+      flex-direction: column;
+
+    }
+    &-img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+    }
+    &-btn {
+      color: $color-main;
+      margin-bottom: 30px;
+    }
+  }
+  &__second {
+    display: flex;
+    flex-direction: row;
+    &-info1 {
+       background-color: $color-dark-lite;
+       margin: 10px 10px 0 0;
+      width: 100%;
+      padding: 20px;
+     }
+    &-info2 {
+      background-color: $color-dark-lite;
+      width: 100%;
+      margin: 10px 0 0 0;
+      padding: 20px;
+
+    }
+  }
+}
+@media screen and (max-width: 540px) {
+  .single__second {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    &-info1 {
+      background-color: $color-dark-lite;
+      margin: 10px 0 0 0;
+      width: 100%;
+      padding: 20px;
+    }
+  }
+}
